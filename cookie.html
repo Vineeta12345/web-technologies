@@ -1,0 +1,35 @@
+<html>
+<head>
+<script type="text/javascript">
+function writeCookie()
+{if(document.myform.customer.value==""){
+alert("Enter some value!");
+return;}
+cookievalue= escape(document.myform.customer.value) + ";";
+document.cookie="name=" + cookievalue;
+alert("setting cookies : " + "name=" + cookievalue);}
+function readCookie()
+{var allcookies = document.cookie;
+alert("All Cookies : " + allcookies);
+cookiearray = allcookies.split(';');
+for(var i=0; i<cookiearray.length; i++)
+{name = cookiearray[i].split('=')[0];
+value = cookiearray[i].split('=')[1];
+alert("Key is : " + name + "and value is : " + value);}}
+function deleteCookie()
+{var now = new Date();
+now.setMonth(now.getMonth()-1);
+cookievalue= escape(document.myform.customer.value) + ";";
+document.cookie="name=" + cookievalue;
+document.cookie="expires ="+now.toUTCString() + ";"
+alert("setting cookies : " + "name=" + cookievalue);}
+</script></head>
+<body><form name="myform" action="Give your name here">
+Enter name: <input type="text" name="customer"/>
+<input type="button" value="Set Cookie" onclick="writeCookie();"/>
+<input type="button" value="Get Cookie" onclick="readCookie();"/></form>
+<form name="formname" action="">
+Enter name: <input type="text" name="customer"/>
+<input type="button" value="Delete Cookie" onclick="deleteCookie();"/></form>
+</body>
+</html>
