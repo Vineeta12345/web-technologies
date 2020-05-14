@@ -1,0 +1,26 @@
+<html> 
+<head> 
+<title>Validate input data</title> 
+</head> 
+<body> 
+<p>Enter name:</p> 
+<input type="text"/>
+<p>Enter graduation percentage:</p> 
+<input id="perc"> 
+<button type="button" onclick="Validate()">Submit</button> 
+<p id="demo"></p> 
+<script> 
+function Validate() { 
+var x, text; 
+x = document.getElementById("perc").value; 
+if (isNaN(x) || x < 60) { 
+window.alert("Not selected"); 
+} else { 
+document.getElementById("demo").innerHTML = 
+"Selected"; 
+document.getElementById("demo").style.color = "#009900"; 
+} 
+} 
+</script> 
+</body> 
+</html>					 
